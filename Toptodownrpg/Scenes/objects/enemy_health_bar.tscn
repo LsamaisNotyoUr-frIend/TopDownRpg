@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://2gi7lhht0cy8"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_health_bar.gd" id="1_escsm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwqm4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvvr4"]
+bg_color = Color(0.677987, 0.187957, 0.167259, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 2
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1vln"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnws3"]
+bg_color = Color(0.283226, 0.0665045, 0.0909737, 1)
+
+[node name="EnemyHealthBar" type="ProgressBar"]
+z_index = 1
+offset_right = 248.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_lwqm4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uvvr4")
+value = 40.0
+show_percentage = false
+script = ExtResource("1_escsm")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_g1vln")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gnws3")
+value = 80.0
+show_percentage = false
